@@ -7,8 +7,10 @@
     <h1>Оголошення</h1>
     <div>
       <a href="/bboard/">Головна</a>
+      <a href="{% url 'add' %}">Добавити</a>
       {% for rubric in rubrics %}
-      <a href="{% url 'by_rubric' rubric.pk %}">{{rubric.name}}</a>
+      <!-- <a href="/bboard/{{rubric.pk}}">{{rubric.name}}</a> -->
+        <a href="{% url 'by_rubric' rubric.pk %}">{{rubric.name}}</a>
       {%endfor %}
     </div>
     {% for bb in bbs %}

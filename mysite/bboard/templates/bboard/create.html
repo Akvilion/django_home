@@ -1,20 +1,26 @@
 <!DOCTYPE html>
-<htm>
+
+<html>
     <head>
-        <title>Дошка оголошень</title>
+        <title>
+            Додавання оголошень
+        </title>
     </head>
     <body>
-        <h1>Додати оголошення</h1>
         <div>
             <a href="/bboard/">Головна</a>
+            <a href="{% url 'add' %}">Добавити</a>
             {% for rubric in rubrics %}
-                <a href="/bboard/{{rubric.pk}}">{{rubric.name}}</a>
-            {%endfor %}
+                <a href="{% url 'by_rubric' rubric.pk %}">{{rubric.name}}</a>
+            {% endfor %}
+        </div>
+        <div>
             <form method="POST">
                 {% csrf_token %}
                 {{form.as_p}}
-                <input type="submit" value="Додати">
+                <input type="submit" value="Відправити">
             </form>
         </div>
     </body>
-</htm>
+</html>
+

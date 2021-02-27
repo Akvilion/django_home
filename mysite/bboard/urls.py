@@ -5,5 +5,6 @@ from .views import index, by_rubric, BbCreateView
 urlpatterns = [
     path('', index, name='index'),
     path('<int:rubric_id>/', by_rubric, name='by_rubric'),
-    path('create/', BbCreateView.as_view())
+    path('create/', BbCreateView.as_view(), name='add'),
+
 ]
