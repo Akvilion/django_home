@@ -1,19 +1,8 @@
-<!DOCTYPE html>
+{% extends 'layout/basic.html' %}
 
-<html>
-    <head>
-        <title>
-            Додавання оголошень
-        </title>
-    </head>
-    <body>
-        <div>
-            <a href="{% url 'index' %}">Головна</a>
-            <a href="{% url 'add' %}">Добавити</a>
-            {% for rubric in rubrics %}
-                <a href="{% url 'by_rubric' rubric.pk %}">{{rubric.name}}</a>
-            {% endfor %}
-        </div>
+
+        {% block title %}Додавання оголошень{% endblock %}
+        {% block content %}
         <div>
             <form method="POST">
                 {% csrf_token %}
@@ -21,6 +10,5 @@
                 <input type="submit" value="Відправити">
             </form>
         </div>
-    </body>
-</html>
+        {% endblock %}
 

@@ -2,7 +2,6 @@ from django.forms import ModelForm
 
 from .models import Bb
 
-<<<<<<< HEAD
 
 class BbForm(ModelForm):
     class Meta:
